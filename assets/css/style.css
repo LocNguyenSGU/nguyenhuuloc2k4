@@ -100,3 +100,119 @@
   bottom: -227px;
   animation-delay: 7s;
 }
+
+/* .item-link:hover {
+  color: rgb(147 51 234);
+} */
+
+.btn {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+/* 1. Pulse Animation */
+.btn-pulse {
+  background-color: rgb(147 51 234);
+  color: rgb(209 213 219);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 2. Wobble Animation */
+.btn-wobble {
+  color: rgb(147 51 234);
+  border: 2px solid rgb(147 51 234);
+}
+
+.btn-wobble:hover {
+  animation: wobble 0.8s;
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-5%) rotate(-1deg);
+  }
+}
+
+
+/* =========== css tiktok, gmail,.. ==========*/
+
+.wrapper a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: rgb(147 51 234);
+  border: 2px solid rgb(147 51 234);
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.35s ease;
+}
+
+.wrapper a span {
+  position: relative;
+  z-index: 2; /* Giữ chữ không bị che */
+}
+
+.wrapper a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgb(147 51 234);
+  border-radius: 50%;
+  transition: width 0.35s ease, height 0.35s ease;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.wrapper a:hover {
+  color: white; /* Đổi màu chữ khi hover */
+}
+
+.wrapper a:hover::after {
+  width: 150%;
+  height: 150%;
+}
