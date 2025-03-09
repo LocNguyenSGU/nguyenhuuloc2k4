@@ -37,3 +37,4 @@ function setLight() {
     darkIcon.classList.remove('hidden');
     lightIcon.classList.add('hidden');
 }
+

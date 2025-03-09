@@ -1,4 +1,8 @@
-## My Profile - Dark Theme![1741142442342](image/README/1741142442342.png)
+## My Profile - Dark Theme
+
+![1741494345504](image/README/1741494345504.png)
+
+![1741494317305](image/README/1741494317305.png)
 
 This is the dark theme interface of my profile page.
 

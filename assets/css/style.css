@@ -3,6 +3,10 @@
   src: url("../fonts/Agustina-Signature.otf");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes animate {
   0%{
       transform: translateY(0) rotate(0deg);
@@ -26,6 +30,8 @@
   padding: 0;
   overflow: hidden;
   z-index: -1;
+  background-color: #040e1e;
+  background-color: #03142f;
 }
 
 .background li {
@@ -215,4 +221,45 @@
 .wrapper a:hover::after {
   width: 150%;
   height: 150%;
+}
+
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+.spin-reverse {
+  animation: spin-reverse 8s linear infinite;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.animate-slide-in-left {
+  animation: slideInLeft 1s ease-out forwards;
 }

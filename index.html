@@ -20,7 +20,7 @@
       property="og:site_name"
       content="Nguyễn Hữu Lộc | GitHub Profile Page"
     />
-    <meta property="og:title" content="Nguyễn Hữu Lộcn | GitHub Profile Page" />
+    <meta property="og:title" content="Nguyễn Hữu Lộc | GitHub Profile Page" />
     <meta
       property="og:description"
       content="︻デ┳═ー ☹²ᵏ⁴ Passionate about backend and system design"
@@ -47,44 +47,52 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   </head>
-  <body class="px-10">
-    <header class="p-8 flex justify-between item-center">
-      <div class="logo">
-        <span class="text-gray-500 dark:text-gray-300">&lt;</span>
-        <a href="#"
-          ><span
-            class="text-slate-700 dark:text-white px-3"
-            style="font-family: 'Pacifico', cursive; font-size: 1.9em"
-            >Nguyễn Hữu Lộc</span
-          ></a
-        >
-        <span class="text-gray-500 dark:text-gray-300">/&gt;</span>
-      </div>
-      <div class="menu flex items-center gap-6">
-        <a
-          class="text-lg text-gray-500 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-600"
-          href="#about"
-          >Home</a
-        >
-        <a
-          class="text-lg text-gray-500 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-600"
-          href="#about"
-          >About</a
-        >
-        <a
-          class="text-lg text-gray-500 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-600"
-          href="#projects"
-          >Projects</a
-        >
-        <a
-          class="text-lg text-gray-500 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-600"
-          href="#contact"
-          >Contact</a
-        >
-      </div>
-    </header>
-    <section class="pt-10 px-8 pb-10">
+  <body>
+    <div class="header px-16 fixed top-0 left-0 z-50 mx-auto block bg-gray-800 w-screen">
+      <header>
+        <div class="py-5 flex justify-between item-center">
+          <div class="logo">
+            <span class="text-gray-500 dark:text-gray-300">&lt;</span>
+            <a href="#"
+              ><span
+                class="text-slate-700 dark:text-white px-3"
+                style="font-family: 'Pacifico', cursive; font-size: 1.9em"
+                >Nguyễn Hữu Lộc</span
+              ></a
+            >
+            <span class="text-gray-500 dark:text-gray-300">/&gt;</span>
+          </div>
+          <div class="menu flex items-center gap-6">
+            <a
+              class="text-lg text-gray-500 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-600"
+              href="#home"
+              >Home</a
+            >
+            <a
+              class="text-lg text-gray-500 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-600"
+              href="#about"
+              >About</a
+            >
+            <a
+              class="text-lg text-gray-500 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-600"
+              href="#projects"
+              >Projects</a
+            >
+            <a
+              class="text-lg text-gray-500 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-600"
+              href="#contact"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </header>
+    </div>
+    <section id="home" class="home pt-16 px-16 mt-16 block w-screen h-screen scroll-mt-20" style="height: calc(100vh - 64px);">
       <img
         class="rounded-full ring-2 ring-white h-20 w-20 md:h-36 md:w-36"
         src="https://avatars.githubusercontent.com/u/136878892?v=4"
@@ -164,7 +172,54 @@
         </div>
       </div>
     </section>
-    <footer class="pt-8 pb-2 flex flex-col items-center">
+    <section id="about" class="about-me px-16 w-screen h-screen bg-[#03142f] scroll-mt-20" style="height: calc(100vh - 64px);">
+      <div class="mx-auto">
+        <div class="about-me-content pt-20">
+          <h2 class="text-4xl font-extrabold text-center text-white animate__animated animate__fadeInTopLeft">
+            About <span class="text-purple-600 text-4xl">Me</span>
+          </h2>
+          <div class="wrap-content pt-7 flex justify-center text-base">
+            <div class="row mx-auto flex gap-[400px] mx-auto">
+              <div class="text-info text-white">
+                <div class="text-info-item pt-3">
+                  <span class="text-info-title">Name:</span>
+                  <span class="text-info-content text-purple-600 pl-5 animate__animated animate__fadeInTopLeft">Nguyễn Hữu Lộc</span>
+                </div>
+                <div class="text-info-item pt-3">
+                  <span class="text-info-title">Birthday:</span>
+                  <span class="text-info-content text-purple-600 pl-5 animate__animated animate__fadeInTopLeft">23/09/2004</span>
+                </div>
+                <div class="text-info-item pt-3">
+                  <span class="text-info-title">Address:</span>
+                  <span class="text-info-content text-purple-600 pl-5 animate__animated animate__fadeInTopLeft">Hoc Mon, Ho Chi Minh city</span>
+                </div>
+                <div class="text-info-item pt-3">
+                  <span class="text-info-title">School:</span>
+                  <span class="text-info-content text-purple-600 pl-5 animate__animated animate__fadeInTopLeft">Sai Gon University</span>
+                </div>
+                <div class="text-info-item pt-3">
+                  <span class="text-info-title">Specialization:</span>
+                  <span class="text-info-content text-purple-600 pl-5 animate__animated animate__fadeInTopLeft">Software Engineer</span>
+                </div>
+              </div>
+              <div class="relative flex items-center justify-center">
+                <!-- Hiệu ứng vòng tròn bên ngoài -->
+                <div class="absolute w-[180px] h-[180px] rounded-full border-t-4 border-b-4 border-purple-500 spin-slow"></div>
+                <div class="absolute w-[200px] h-[200px] rounded-full border-t-4 border-b-4 border-blue-500 spin-reverse"></div>
+              
+                <!-- Hình ảnh chính -->
+                <img
+                  class="rounded-full ring-4 ring-white h-[150px] w-[150px] z-10"
+                  src="https://avatars.githubusercontent.com/u/136878892?v=4"
+                />
+              </div>
+            </div>
+          </div>
+          <span class="text-info-title text-white text-center mt-20 block">Aspiring to evolve into a proficient Full-Stack Developer, I am dedicated to mastering both the Frontend and Backend realms of web development. My goal is to seamlessly integrate diverse technologies, delivering robust and user-centric solutions.</span>
+        </div>
+      </div>
+    </section>
+    <footer class="pt-8 px-16 pb-2 flex flex-col items-center">
       <span class="text-sm text-gray-600 dark:text-gray-300"
         >Since ❤️ 2025 by @LocNguyen</span
       >
@@ -191,6 +246,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/js/typing.js"></script>
     <script src="assets/js/dark.js"></script>
+    <script src="assets/js/index.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
