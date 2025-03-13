@@ -263,3 +263,95 @@ html {
 .animate-slide-in-left {
   animation: slideInLeft 1s ease-out forwards;
 }
+
+
+/* =========== My_Peojects ============ */
+/* Ẩn ban đầu các project-item để thêm animation */
+.project-item {
+  display: none;
+}
+/* Hiệu ứng fade-in cho project-item */
+.project-item.show {
+  display: flex;
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* Hiệu ứng fade-out khi thu nhỏ */
+.project-item.hide {
+  animation: fadeOut 0.5s ease-in-out;
+}
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  to {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+}
+
+
+
+
+/* Ẩn ban đầu các project-item để thêm animation */
+.project-item {
+  display: none;
+}
+/* Hiệu ứng fade-in cho project-item */
+.project-item.show {
+  display: flex;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* Hiệu ứng fade-out khi thu nhỏ */
+.project-item.hide {
+  display: flex;
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  to {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+}
+/* Hiệu ứng hover cho project-card */
+.project-card {
+  transition: all 0.3s ease-in-out;
+  background-image: linear-gradient(#bc92e3,#af6dec);
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+}
+.project-card:hover {
+  transform: translateY(-5px); /* Nâng thẻ lên 5px khi hover */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* Thêm bóng đổ */
+  background-size: 100% 100%;
+}
+.project-card:hover .date,
+.project-card:hover h3,
+.project-card:hover p,
+.project-card:hover a {
+  color: #fff; 
+}

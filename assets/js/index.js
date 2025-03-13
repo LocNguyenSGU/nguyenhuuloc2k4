@@ -28,3 +28,29 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", highlightMenu);
     highlightMenu(); // Gọi ngay khi load trang để cập nhật màu
 });
+
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.style.opacity = "1";
+            } else {
+                scrollToTopBtn.style.opacity = "0";
+            }
+        });
+
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+
+        window.addEventListener("load", () => {
+            const projectsSection = document.getElementById("my_projects_container");
+            const footer = document.getElementById("footer");
+        
+            if (projectsSection && footer) {
+                const height = projectsSection.offsetHeight; 
+                console.log("Chiều cao của my_projects:", height); // Debug
+                footer.style.marginTop = `${height - 580}px`;
+            }
+        });
