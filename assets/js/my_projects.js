@@ -1,6 +1,15 @@
 const projects = [
     {
         type: "advanced",
+        startDate: "22/03/2025",
+        endDate: "23/03/2025",
+        title: "EduMind",
+        description: "Developed an AI-powered learning platform that integrates mind mapping, summarization, exercises, and discussions using OpenAI",
+        link: "https://github.com/LocNguyenSGU/Hackathon_Luong_Nghin_Do",
+        "Hackathon": "Top 2"
+    },
+    {
+        type: "advanced",
         startDate: "Dec 2024",
         endDate: "Now",
         title: "Calligo Backend",
@@ -176,6 +185,7 @@ function createAllTimeline() {
                 projectCard.className = "project-card relative bg-gray-800 p-4 rounded-lg border-2 border-purple-500 mb-4";
                 projectCard.innerHTML = `
                   ${project?.score ? `<span style="font-size: 14px; color: #f03939; font-weight: bold;">${project.score} điểm</span>` : ""}
+                  ${project?.Hackathon ? `<span style="font-size: 14px; color: #f03939; font-weight: bold;">${project.Hackathon} -  Hackathon</span>` : ""}
                     <div class="date text-purple-600 text-sm mb-2">${project.startDate} - ${project.endDate}</div>
                     <h3 class="text-lg font-semibold mb-2 text-white">${project.title}</h3>
                     <p class="text-white text-sm mb-2">${project.description}</p>
@@ -196,6 +206,7 @@ function createAllTimeline() {
                 projectCard.className = "project-card bg-gray-800 p-4 rounded-lg border-2 border-purple-500 mb-4";
                 projectCard.innerHTML = `
                       ${project?.score ? `<span style="font-size: 14px; color: #f03939; font-weight: bold;">${project.score} điểm</span>` : ""}
+                      ${project?.Hackathon ? `<span style="font-size: 14px; color: #f03939; font-weight: bold;">${project.Hackathon} - Hackathon</span>` : ""}
                     <div class="date text-purple-600 text-sm mb-2">${project.startDate} - ${project.endDate}</div>
                     <h3 class="text-lg font-semibold mb-2 text-white">${project.title}</h3>
                     <p class="text-white text-sm mb-2">${project.description}</p>
