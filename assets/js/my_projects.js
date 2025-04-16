@@ -1,6 +1,42 @@
 const projects = [
     {
         type: "advanced",
+        startDate: "01/03/2025",
+        endDate: "14/04/2025",
+        title: "Backend Spotify",
+        description: "Back end Django supply API relevant to spotify has technology like JWT, WebSocket, MySql, OpenAI, GenemiAI, Model training",
+        link: "https://github.com/lamkbvn/BACKEND_SPOTIFY",
+        "score": "9.5"
+    },
+    {
+        type: "advanced",
+        startDate: "01/3/2025",
+        endDate: "14/04/2025",
+        title: "Clone Spotify",
+        description: "Frontend React Type Script clone Instagram using backend of Social Media",
+        link: "https://github.com/duylam15/react-clone-spotify",
+        "score": "9.5"
+    },
+    {
+        type: "advanced",
+        startDate: "23/02/2025",
+        endDate: "14/04/2025",
+        title: "Social Media",
+        description: "Back end spring boot supply API relevant to social media like Instagram has technology like JWT, Redis, and Spring Security, WebSocket, RabitMQ, MySql, OpenAI, GenemiAI",
+        link: "https://github.com/LocNguyenSGU/SocialMedia",
+        "score": "9"
+    },
+    {
+        type: "advanced",
+        startDate: "23/02/2025",
+        endDate: "15/04/2025",
+        title: "Clone Instagram",
+        description: "Frontend React Type Script clone Instagram using backend of Social Media",
+        link: "https://github.com/duylam15/react-Instagram-clone",
+        "score": "9"
+    },
+    {
+        type: "advanced",
         startDate: "22/03/2025",
         endDate: "23/03/2025",
         title: "EduMind",
@@ -24,14 +60,14 @@ const projects = [
         description: "A modern web-based chat and call application developed with React.js and Ant Design, providing a seamless real-time communication experience.",
         link: "https://github.com/LocNguyenSGU/Calligo-FE"
     },
-    {
-        type: "basic",
-        startDate: "Feb 2025",
-        endDate: "Now",
-        title: "Social Media",
-        description: "Backend Springboot supply API relevant to social media like Instagram, and chat call feature like Messenger",
-        link: "https://github.com/LocNguyenSGU/SocialMedia"
-    },
+    // {
+    //     type: "basic",
+    //     startDate: "Feb 2025",
+    //     endDate: "Now",
+    //     title: "Social Media",
+    //     description: "Backend Springboot supply API relevant to social media like Instagram, and chat call feature like Messenger",
+    //     link: "https://github.com/LocNguyenSGU/SocialMedia"
+    // },
     {
         type: "basic",
         startDate: "Mar 2025",
