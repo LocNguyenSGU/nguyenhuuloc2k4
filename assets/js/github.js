@@ -1,30 +1,42 @@
+// const username = "LocNguyenSGU";
+const token = "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"; // 👈 dễ đổi sau này
+
+const repoUrl = `https://api.github.com/users/LocNguyenSGU/repos`;
+const userUrl = `https://api.github.com/users/LocNguyenSGU`;
+const topic_tag = "me";
+
+// Hàm gọi API có token
+async function fetchWithToken(url) {
+    const response = await fetch(url, {
+        headers: {
+            Authorization: `token ${token}`
+        }
+    });
+    return response.json();
+}
+
+// Gọi khi load trang
 $(document).ready(function () {
     repos();
+    fetchGitHubData();
 });
-
-const repoUrl = `https://api.github.com/users/${username}/repos`;
-const userUrl = `https://api.github.com/users/${username}`;
-const topic_tag = "me";
 
 async function repos() {
     let page = 1;
     let count = 0;
     while (true) {
-        const response = await fetch(repoUrl + "?sort=updated&direction=desc&per_page=100&page=" + page);
-        const repos = await response.json();
+        const repos = await fetchWithToken(repoUrl + "?sort=updated&direction=desc&per_page=100&page=" + page);
         $("#loading").hide();
 
-        if (!repos.length) {
-            break;
-        }
+        if (!repos.length) break;
 
-        for (var i = 0; i < repos.length; i++) {
-            repo = repos[i]
-            if (repos[i].topics.includes(topic_tag)) {
-                if (repo.language == null) repo.language = "";
+        for (let repo of repos) {
+            if (repo.topics.includes(topic_tag)) {
+                if (!repo.language) repo.language = "";
                 if (repo.name.length > 30) repo.name = `${repo.name.substring(0, 30)}...`;
-                if (repo.description.length > 100) repo.description = `${repo.description.substring(0, 100)}...`;
-                $("#repos").append(repoCard(repo))
+                if (repo.description && repo.description.length > 100) repo.description = `${repo.description.substring(0, 100)}...`;
+
+                $("#repos").append(repoCard(repo));
                 count++;
             }
         }
@@ -39,7 +51,7 @@ async function repos() {
     }
 }
 
-function repoCard() {
+function repoCard(repo) {
     return `
   <div class="rounded overflow-hidden shadow-lg bg-white dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700">
     <div class="p-6">
@@ -50,7 +62,7 @@ function repoCard() {
         ${repo.name}
       </a>
       <p class="pt-4 text-base text-gray-500 dark:text-gray-400">
-        ${repo.description}
+        ${repo.description || ""}
       </p>
     </div>
     <div class="pl-3 pt-4">
@@ -77,54 +89,40 @@ function repoCard() {
 }
 
 function topicsSpan(repo) {
-    topics = "";
-    for (var i = 0; i < repo.topics.length; i++) {
-        topic = repo.topics[i];
-        if (topic === topic_tag) {
-            continue;
-        }
-        topics += `<span class="inline-block bg-gray-200 dark:bg-gray-600 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-400 mr-1 mb-1">#${topic}</span>`
-    }
-
-    return topics
+    return repo.topics
+        .filter(topic => topic !== topic_tag)
+        .map(topic => `
+            <span class="inline-block bg-gray-200 dark:bg-gray-600 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-400 mr-1 mb-1">
+              #${topic}
+            </span>
+        `)
+        .join("");
 }
 
 async function fetchGitHubData() {
     try {
-        //fetch user data
-        const userResponse = await fetch(userUrl);
-        if (!userResponse.ok) throw new Error("Failed to fetch user data");
-        const userData = await userResponse.json();
+        const userData = await fetchWithToken(userUrl);
+        const reposData = await fetchWithToken(repoUrl);
 
-        console.log("LOC: ", userData);
-
-        //fetch repository data to calculate total stars
-        const reposResponse = await fetch(repoUrl);
-        if (!reposResponse.ok) throw new Error("Failed to fetch repositories");
-        const reposData = await reposResponse.json();
-
-        //calculate total stars
         const totalStars = reposData.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+        console.log(reposData)
+        console.log("Star lay duoc", totalStars)
 
-        //tong so repo public
         document.getElementById("repo-count").innerHTML = `
             <i class="fa-solid fa-diagram-project"></i> ${userData.public_repos} repositories
         `;
         document.getElementById("repo-count").href = `https://github.com/${username}?tab=repositories`;
 
-        //total follow
         document.getElementById("follower-count").innerHTML = `
-          <i class="fa-solid fa-users"></i> ${userData.followers} followers
+            <i class="fa-solid fa-users"></i> ${userData.followers} followers
         `;
         document.getElementById("follower-count").href = `https://github.com/${username}?tab=followers`;
 
-        //total start project
         document.getElementById("star-count").innerHTML = `
-          <i class="fa-solid fa-star"></i> ${totalStars} stars
+            <i class="fa-solid fa-star"></i> ${totalStars} stars
         `;
         document.getElementById("star-count").href = `https://github.com/${username}?tab=repositories`;
 
-        //location
         if (userData.location) {
             document.getElementById("location").innerHTML = `
                 <i class="fa-solid fa-location-dot"></i> ${userData.location}
@@ -132,9 +130,8 @@ async function fetchGitHubData() {
         } else {
             document.getElementById("location").style.display = "none";
         }
+
     } catch (error) {
         console.error("Error fetching GitHub data:", error);
     }
 }
-
-fetchGitHubData();

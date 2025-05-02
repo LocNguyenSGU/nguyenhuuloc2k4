@@ -46,11 +46,42 @@ const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
         window.addEventListener("load", () => {
             const projectsSection = document.getElementById("my_projects_container");
-            const footer = document.getElementById("footer");
+            const footer = document.getElementById("contact");
         
             if (projectsSection && footer) {
                 const height = projectsSection.offsetHeight; 
                 console.log("Chiều cao của my_projects:", height); // Debug
-                footer.style.marginTop = `${height - 580}px`;
+                footer.style.marginTop = `${height - 600}px`;
             }
         });
+
+
+// 
+const form = document.getElementById("contactForm");
+const responseMessage = document.getElementById("responseMessage");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbysRCnw7wQBq0G5BOgup94SqfV8nbSgu5wdySVjuOhbT5QQLm_QZYJ7sa8BmsX8fqcD/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+  })
+    .then(res => res.text())
+    .then(text => {
+      responseMessage.textContent = "✅ Gửi thành công!";
+      responseMessage.className = "mt-4 text-green-600 text-center text-sm";
+      form.reset();
+    })
+    .catch(error => {
+      responseMessage.textContent = "❌ Có lỗi xảy ra khi gửi.";
+      responseMessage.className = "mt-4 text-red-600 text-center text-sm";
+      console.error("Lỗi:", error);
+    });
+});

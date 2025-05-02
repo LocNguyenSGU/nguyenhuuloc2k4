@@ -253,15 +253,47 @@
         </div>
       </div>
     </section>
-    <footer id="footer" class="pt-8 px-16 block pb-2 flex flex-col items-center">
-      <span class="text-sm text-gray-600 dark:text-gray-300"
-        >Since ❤️ 2025 by @LocNguyen</span
-      >
-      <span id="location" class="text-xs text-gray-600 dark:text-gray-300"
-        >✌️SaiGon, Việt Nam</span
-      >
-    </footer>
-
+    <section id="contact" class="contact bg-[#03142f] px-16 min-h-screen flex items-center justify-center p-4 flex-col">
+      <div class="shadow-md rounded-2xl p-5 w-full max-w-md">
+        <h2 class="text-4xl font-extrabold text-center text-white animate__animated animate__fadeInTopLeft">
+          Liên hệ<span class="text-purple-600 text-4xl"> với tôi </span>
+        </h2>
+        <form id="contactForm" class="space-y-4 block pt-5">
+          <div>
+            <label for="name" class="block text-sm font-medium text-white">Họ tên</label>
+            <input type="text" id="name" name="name" required
+              class="mt-1 block w-full rounded-xl border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none" />
+          </div>
+    
+          <div>
+            <label for="email" class="block text-sm font-medium text-white">Email</label>
+            <input type="email" id="email" name="email" required
+              class="mt-1 block w-full rounded-xl border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none" />
+          </div>
+    
+          <div>
+            <label for="message" class="block text-sm font-medium text-white">Nội dung</label>
+            <textarea id="message" name="message" rows="5" required
+              class="mt-1 block w-full rounded-xl border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"></textarea>
+          </div>
+    
+          <button type="submit"
+            class="w-full text-white rounded-xl py-2 font-semibold transition btn-pulse">
+            Gửi liên hệ
+          </button>
+        </form>
+        <p id="responseMessage" class="mt-4 text-center text-sm"></p>
+      </div>
+      <footer id="footer" class="pt-8 px-16 block pb-2 flex flex-col items-center">
+        <span class="text-sm text-gray-600 dark:text-gray-300"
+          >Since ❤️ 2025 by @LocNguyen</span
+        >
+        <span id="location" class="text-xs text-gray-600 dark:text-gray-300"
+          >✌️SaiGon, Việt Nam</span
+        >
+      </footer>
+    </section>
+    
     <button id="scrollToTopBtn" class="fixed bottom-8 right-8 bg-purple-500 text-white p-4 rounded-full shadow-lg hover:bg-purple-600 transition duration-300 opacity-0">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
