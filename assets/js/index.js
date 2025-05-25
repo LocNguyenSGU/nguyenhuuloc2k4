@@ -44,16 +44,36 @@ const scrollToTopBtn = document.getElementById("scrollToTopBtn");
         });
 
 
-        window.addEventListener("load", () => {
-            const projectsSection = document.getElementById("my_projects_container");
-            const footer = document.getElementById("contact");
-        
-            if (projectsSection && footer) {
-                const height = projectsSection.offsetHeight; 
-                console.log("Chiều cao của my_projects:", height); // Debug
-                footer.style.marginTop = `${height - 600}px`;
-            }
-        });
+       window.addEventListener("load", () => {
+    const projectsSection = document.getElementById("my_projects_container");
+    const footer = document.getElementById("contact");
+
+    if (projectsSection && footer) {
+        const height = projectsSection.offsetHeight;
+        const width = window.innerWidth; // Lấy chiều rộng màn hình
+
+        console.log("Chiều cao của my_projects:", height);
+        console.log("Chiều rộng màn hình:", width);
+
+        let marginTopValue = 0;
+
+        if (width >= 1024) {
+            // Desktop
+            marginTopValue = height - 600;
+        } else if (width >= 768) {
+            // Tablet
+            marginTopValue = height - 500;
+        } else {
+            // Mobile
+            marginTopValue = height - 200;
+        }
+
+        // Đảm bảo marginTop không bị âm
+        marginTopValue = marginTopValue < 0 ? 0 : marginTopValue;
+
+        footer.style.marginTop = `${marginTopValue}px`;
+    }
+});
 
 
 // 
