@@ -4,7 +4,7 @@ const projects = [
         startDate: "03/03/2025",
         endDate: "22/05/2025",
         title: "NCKH: Nhận diện cảm xúc khuôn mặt",
-        description: "Dự án tập trung vào phát triển hệ thống nhận diện biểu cảm khuôn mặt (Facial Expression Recognition - FER) hoạt động hiệu quả trong điều kiện ánh sáng yếu — một thách thức lớn trong lĩnh vực thị giác máy tính. Chúng tôi sử dụng mô hình MobileNetV3 kết hợp với một thuật toán tăng cường dữ liệu thích ứng do nhóm tự phát triển, nhằm cải thiện độ sáng tuỳ vào từng bức ảnh, từ đó nâng cao độ chính xác của mô hình trong các môi trường ánh sáng không ổn định.",
+        description: "Dự án NCKH phát triển hệ thống nhận diện biểu cảm khuôn mặt trong điều kiện ánh sáng yếu, sử dụng MobileNetV3 kết hợp thuật toán tăng cường dữ liệu thích ứng để điều chỉnh độ sáng và cải thiện độ chính xác.",
         link: "https://github.com/lamkbvn/DO_AN_PPNCKH",
         "score": "9.8"
     },

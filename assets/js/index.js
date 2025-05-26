@@ -62,10 +62,10 @@ const scrollToTopBtn = document.getElementById("scrollToTopBtn");
             marginTopValue = height - 600;
         } else if (width >= 768) {
             // Tablet
-            marginTopValue = height - 500;
+            marginTopValue = height - 900;
         } else {
             // Mobile
-            marginTopValue = height - 200;
+            marginTopValue = height - 680;
         }
 
         // Đảm bảo marginTop không bị âm

@@ -52,7 +52,7 @@
     </header>
   </div>
   <section id="home"
-    class="home px-8 pt-24 sm:pt-16 sm:px-16 sm:mt-16 block w-screen h-[calc(100vh-64px)] scroll-mt-20 md:h-auto sm:h-auto mt-16">
+    class="home px-8 pt-24 sm:py-16 sm:px-16 sm:mt-16 block w-screen scroll-mt-20 md:h-auto sm:h-auto mt-16">
     <img class="rounded-full ring-2 ring-white h-[180px] w-[180px] sm:h-20 sm:w-20 md:h-36 md:w-36"
       src="https://avatars.githubusercontent.com/u/136878892?v=4" />
     <h1 class="pt-4 text-2xl md:text-4xl text-slate-800 dark:text-white">
@@ -92,9 +92,9 @@
          px-[20px] 
          py-[11px] 
          text-[15px] 
-         sm:px-0 
-         sm:py-0 
-         sm:text-inherit 
+          sm:px-4
+        sm:py-2
+         sm:text-base 
          sm:w-auto">
           Download my CV
         </button>
@@ -102,7 +102,7 @@
     </div>
     <br />
     <hr />
-    <div class="py-4 text-sm flex item-center sm:justify-between flex-col gap-2">
+    <div class="py-4 text-sm flex item-center sm:justify-between flex-col sm:flex-row gap-2">
       <div>
         <a id="repo-count" class="text-gray-600 dark:text-white hover:text-purple-600" href="#" target="_blank">
           <i class="fa-solid fa-diagram-project"></i> 36 repositories
@@ -133,15 +133,14 @@
       </div>
     </div>
   </section>
-  <section id="about" class="about-me px-16 w-screen h-screen bg-[#03142f] scroll-mt-20"
-    style="height: calc(100vh - 64px);">
+  <section id="about" class="about-me px-8 sm:px-16 w-screen h-max bg-[#03142f] scroll-mt-20 sm:h-[calc(100vh-64px)]">
     <div class="mx-auto">
-      <div class="about-me-content pt-20">
+      <div class="about-me-content pt-14 sm:pt-20 ">
         <h2 class="text-4xl font-extrabold text-center text-white animate__animated animate__fadeInTopLeft">
           About <span class="text-purple-600 text-4xl">Me</span>
         </h2>
-        <div class="wrap-content pt-7 flex justify-center text-base">
-          <div class="row mx-auto flex md:gap-[200px] lg:gap-[400px]">
+        <div class="w-max mx-auto sm:wrap-content pt-7 flex justify-center text-base">
+          <div class="row mx-auto flex flex-col sm:flex-row gap-[60px] md:gap-[200px] lg:gap-[400px]">
             <div class="text-info text-white">
               <div class="text-info-item pt-3">
                 <span class="text-info-title">Name:</span>
@@ -182,23 +181,23 @@
             </div>
           </div>
         </div>
-        <span class="text-info-title text-white text-center mt-20 block">Motivated Backend Developer Intern with
+        <span class="text-info-title text-white text-center mt-20 block pb-10 sm:pb-0">Motivated Backend Developer Intern with
           hands-on experience building scalable web applications using Java (Spring Boot). Proficient in designing
           RESTful APIs, securing backend logic with Spring Security and JWT, and working with relational and NoSQL
           databases like MySQL and MongoDB. Strong passion for clean code, backend performance, and collaborative
-          problem- solving.</span>
+          problem-solving.</span>
       </div>
     </div>
   </section>
-  <section id="my_projects" class="my_project px-16 w-screen h-screen scroll-mt-[30px]"
-    style="height: calc(100vh - 64px);">
+  <section id="my_projects" class="my_project px-8 sm:px-16 w-screen h-screen scroll-mt-[30px] sm:h-[calc(100vh-64px)]"
+    >
     <div class="mx-auto">
-      <div class="my_project pt-20" id="my_projects_container">
+      <div class="my_project pt-10 sm:pt-20" id="my_projects_container">
         <h2 class="text-3xl font-extrabold text-center text-white animate__animated animate__fadeInTopLeft">
           My Projects's<span class="text-purple-600 text-4xl"> Timeline</span>
         </h2>
         <div class="projects_block w-full max-w-5xl mx-auto relative py-6">
-          <div class="flex item-center justify-between text-white text-2xl font-semibold mb-8">
+          <div class="flex item-center justify-between text-white text:xl sm:text-2xl font-semibold mb-8">
             <span class="basic_title">Basic projects</span>
             <span class="advance_title">Advance projects</span>
           </div>
@@ -221,12 +220,12 @@
     </div>
     </div>
   </section>
-  <section id="contact" class="contact bg-[#03142f] px-16 min-h-screen flex items-center justify-center p-4 flex-col">
+  <section id="contact" class="contact bg-[#03142f] px-8 sm:px-16 min-h-screen block sm:flex items-center justify-center py-12 sm:p-4 flex-col">
     <div class="shadow-md rounded-2xl p-5 w-full max-w-md">
       <h2 class="text-4xl font-extrabold text-center text-white animate__animated animate__fadeInTopLeft">
         Liên hệ<span class="text-purple-600 text-4xl"> với tôi </span>
       </h2>
-      <form id="contactForm" class="space-y-4 block pt-5">
+      <form id="contactForm" class="space-y-4 block pt-11 sm:pt-5">
         <div>
           <label for="name" class="block text-sm font-medium text-white">Họ tên</label>
           <input type="text" id="name" name="name" required
@@ -251,7 +250,7 @@
       </form>
       <p id="responseMessage" class="mt-4 text-center text-sm"></p>
     </div>
-    <footer id="footer" class="pt-8 px-16 block pb-2 flex flex-col items-center">
+    <footer id="footer" class="pt-4 sm:pt-8 px-8 sm:px-16 block pb-2 flex flex-col items-center">
       <span class="text-sm text-gray-600 dark:text-gray-300">Since ❤️ 2025 by @LocNguyen</span>
       <span id="location" class="text-xs text-gray-600 dark:text-gray-300">✌️SaiGon, Việt Nam</span>
     </footer>
