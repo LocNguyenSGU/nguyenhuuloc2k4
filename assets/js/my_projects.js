@@ -13,7 +13,7 @@ const projects = [
         startDate: "01/03/2025",
         endDate: "14/04/2025",
         title: "Backend Spotify",
-        description: "Back end Django supply API relevant to spotify has technology like JWT, WebSocket, MySql, OpenAI, GenemiAI, Model training",
+        description: "Hệ thống backend Django cung cấp API cho ứng dụng Spotify, sử dụng các công nghệ như JWT, WebSocket, MySQL, OpenAI, GeminiAI và huấn luyện mô hình.",
         link: "https://github.com/lamkbvn/BACKEND_SPOTIFY",
         "score": "9.5"
     },
@@ -22,7 +22,7 @@ const projects = [
         startDate: "01/3/2025",
         endDate: "14/04/2025",
         title: "Clone Spotify",
-        description: "Frontend React Type Script clone Instagram using backend of Social Media",
+        description: "Frontend React TypeScript xây dựng ứng dụng nghe nhạc giống Spotify, kết nối với backend Social Media.",
         link: "https://github.com/duylam15/react-clone-spotify",
         "score": "9.5"
     },
@@ -31,7 +31,7 @@ const projects = [
         startDate: "23/02/2025",
         endDate: "14/04/2025",
         title: "Social Media",
-        description: "Back end spring boot supply API relevant to social media like Instagram has technology like JWT, Redis, and Spring Security, WebSocket, RabitMQ, MySql, OpenAI, GenemiAI",
+        description: "Backend Spring Boot cung cấp API cho mạng xã hội tương tự Instagram, tích hợp các công nghệ như JWT, Redis, Spring Security, WebSocket, RabbitMQ, MySQL, OpenAI, GeminiAI.",
         link: "https://github.com/LocNguyenSGU/SocialMedia",
         "score": "9"
     },
@@ -40,7 +40,7 @@ const projects = [
         startDate: "23/02/2025",
         endDate: "15/04/2025",
         title: "Clone Instagram",
-        description: "Frontend React Type Script clone Instagram using backend of Social Media",
+        description: "Frontend React TypeScript xây dựng ứng dụng giống Instagram, kết nối với backend Social Media.",
         link: "https://github.com/duylam15/react-Instagram-clone",
         "score": "9"
     },
@@ -49,7 +49,7 @@ const projects = [
         startDate: "22/03/2025",
         endDate: "23/03/2025",
         title: "EduMind",
-        description: "Developed an AI-powered learning platform that integrates mind mapping, summarization, exercises, and discussions using OpenAI",
+        description: "Phát triển nền tảng học tập ứng dụng AI tích hợp mind mapping, tóm tắt nội dung, bài tập và thảo luận bằng OpenAI.",
         link: "https://github.com/LocNguyenSGU/Hackathon_Luong_Nghin_Do",
         "Hackathon": "Top 2"
     },
@@ -58,7 +58,7 @@ const projects = [
         startDate: "Dec 2024",
         endDate: "Now",
         title: "Calligo Backend",
-        description: "A backend system built with Spring Boot using a microservices architecture to support real-time chat and voice/video calls.",
+        description: "Hệ thống backend xây dựng bằng Spring Boot với kiến trúc microservices, hỗ trợ chat và gọi thoại/video theo thời gian thực.",
         link: "https://github.com/LocNguyenSGU/Calligo"
     },
     {
@@ -66,23 +66,15 @@ const projects = [
         startDate: "Dec 2024",
         endDate: "Now",
         title: "Calligo Frontend",
-        description: "A modern web-based chat and call application developed with React.js and Ant Design, providing a seamless real-time communication experience.",
+        description: "Ứng dụng web chat và gọi hiện đại được phát triển bằng React.js và Ant Design, mang đến trải nghiệm giao tiếp thời gian thực mượt mà.",
         link: "https://github.com/LocNguyenSGU/Calligo-FE"
     },
-    // {
-    //     type: "basic",
-    //     startDate: "Feb 2025",
-    //     endDate: "Now",
-    //     title: "Social Media",
-    //     description: "Backend Springboot supply API relevant to social media like Instagram, and chat call feature like Messenger",
-    //     link: "https://github.com/LocNguyenSGU/SocialMedia"
-    // },
     {
         type: "basic",
         startDate: "Mar 2025",
         endDate: "Now",
         title: "Person Website",
-        description: "Website to introduce myself, my projects, and my skills, dowload my CV, contact me",
+        description: "Website cá nhân để giới thiệu bản thân, các dự án và kỹ năng, tải CV và liên hệ.",
         link: "https://github.com/LocNguyenSGU/nguyenhuuloc2k4"
     },
     {
@@ -90,7 +82,7 @@ const projects = [
         startDate: "Nov 2024",
         endDate: "Sep 2024",
         title: "Flight Management System - Backend",
-        description: 'Backend Spring Boot providing APIs for flight management, a project for the "Cong nghe phan mem" course.',
+        description: 'Backend Spring Boot cung cấp API cho hệ thống quản lý chuyến bay, dự án của môn "Công nghệ phần mềm".',
         link: "https://github.com/kietsocola/FlightManagementSystem",
         "score": "9"
     },
@@ -99,7 +91,7 @@ const projects = [
         startDate: "Nov 2024",
         endDate: "Sep 2024",
         title: "Flight Management System - Frontend",
-        description: 'A React.js web application for flight management, a project for the "Cong nghe phan mem" course.',
+        description: 'Ứng dụng web React.js cho hệ thống quản lý chuyến bay, dự án của môn "Công nghệ phần mềm".',
         link: "https://github.com/duylam15/react-flight-management-system",
         "score": "9"
     },
@@ -108,7 +100,7 @@ const projects = [
         startDate: "Nov 2024",
         endDate: "Sep 2024",
         title: "Sport Field Booking System - Backend",
-        description: 'Backend Spring Boot providing APIs for sport booking, a project for the "Cong nghe J2EE" course.',
+        description: 'Backend Spring Boot cung cấp API cho hệ thống đặt sân thể thao, dự án của môn "Công nghệ J2EE".',
         link: "https://github.com/LocNguyenSGU/SportFieldBookingSystem",
         score: "9"
     },
@@ -117,7 +109,7 @@ const projects = [
         startDate: "Nov 2024",
         endDate: "Sep 2024",
         title: "Sport Field Booking System - Frontend",
-        description: 'A React.js web application for sport booking, a project for the "Cong nghe J2EE" course.',
+        description: 'Ứng dụng web React.js cho hệ thống đặt sân thể thao, dự án của môn "Công nghệ J2EE".',
         link: "https://github.com/duylam15/react-sport-field-booking-system",
         score: "9"
     },
@@ -126,7 +118,7 @@ const projects = [
         startDate: "Feb 2024",
         endDate: "May 2024",
         title: "Tour Booking Website",
-        description: 'A tour booking website built with PHP and MVC architecture, a project for the "Website nâng cao" course.',
+        description: 'Website đặt tour du lịch xây dựng bằng PHP theo kiến trúc MVC, dự án của môn "Website nâng cao".',
         link: "https://github.com/lamkbvn/WEB2",
         score: "10"
     },
@@ -135,7 +127,7 @@ const projects = [
         startDate: "Feb 2024",
         endDate: "May 2024",
         title: "SGU Test System",
-        description: 'A multiple-choice test management system built with Java Servlet and JSP, a project for the "Java Programming" course.',
+        description: 'Hệ thống thi trắc nghiệm được xây dựng bằng Java Servlet và JSP, dự án của môn "Lập trình Java".',
         link: "https://github.com/LocNguyenSGU/SGU-Test",
         score: "10"
     },
@@ -144,7 +136,7 @@ const projects = [
         startDate: "Sep 2023",
         endDate: "Dec 2023",
         title: "E-commerce Website",
-        description: 'A basic e-commerce website built with HTML, CSS, and vanilla JavaScript, using local storage as the database. A project for the "Website Co Ban" course.',
+        description: 'Website thương mại điện tử cơ bản được xây dựng bằng HTML, CSS và JavaScript thuần, sử dụng Local Storage làm cơ sở dữ liệu. Dự án của môn "Website cơ bản".',
         link: "https://github.com/LocNguyenSGU/DoAnWebN11",
         score: "9.5"
     },
@@ -153,10 +145,9 @@ const projects = [
         startDate: "Jul 2023",
         endDate: "Jul 2023",
         title: "Music Player",
-        description: 'A basic music website built with HTML, CSS, and vanilla JavaScript',
+        description: 'Website nghe nhạc cơ bản được xây dựng bằng HTML, CSS và JavaScript thuần.',
         link: "https://locnguyensgu.github.io/Music/",
     }
-    
 ];
 
 // Hàm chuyển đổi ngày dạng "MMM YYYY" thành đối tượng Date để so sánh
