@@ -1,6 +1,13 @@
 const projects = [
     {
         type: "advanced",
+        startDate: "01/07/2025",
+        endDate: "Now",
+        title: "Khoá luận tốt nghiệp: Ứng dụng trí tuệ nhân tạo trong xây dựng hệ thống học tăng cường hỗ trợ dạy và học STEM",
+        description: "Dự án KLTN xây dựng hệ thống theo kiến trúc microservice đằng sau tích hợp hỗ trợ cho Moodle phía trước",
+    },
+    {
+        type: "advanced",
         startDate: "03/03/2025",
         endDate: "22/05/2025",
         title: "NCKH: Nhận diện cảm xúc khuôn mặt",
@@ -56,7 +63,7 @@ const projects = [
     {
         type: "advanced",
         startDate: "Dec 2024",
-        endDate: "Now",
+        endDate: "28/05/2025",
         title: "Calligo Backend",
         description: "Hệ thống backend xây dựng bằng Spring Boot với kiến trúc microservices, hỗ trợ chat và gọi thoại/video theo thời gian thực.",
         link: "https://github.com/LocNguyenSGU/Calligo"
@@ -64,7 +71,7 @@ const projects = [
     {
         type: "advanced",
         startDate: "Dec 2024",
-        endDate: "Now",
+        endDate: "29/05/2025",
         title: "Calligo Frontend",
         description: "Ứng dụng web chat và gọi hiện đại được phát triển bằng React.js và Ant Design, mang đến trải nghiệm giao tiếp thời gian thực mượt mà.",
         link: "https://github.com/LocNguyenSGU/Calligo-FE"
@@ -241,12 +248,12 @@ function createAllTimeline() {
                 const projectCard = document.createElement("div");
                 projectCard.className = "project-card bg-gray-800 p-4 rounded-lg border-2 border-purple-500 mb-4";
                 projectCard.innerHTML = `
-                      ${project?.score ? `<span style="font-size: 14px; color: #f03939; font-weight: bold;">${project.score} điểm</span>` : ""}
-                      ${project?.Hackathon ? `<span style="font-size: 14px; color: #f03939; font-weight: bold;">${project.Hackathon} - Hackathon</span>` : ""}
+                    ${project?.score ? `<span style="font-size: 14px; color: #f03939; font-weight: bold;">${project.score} điểm</span>` : ""}
+                    ${project?.Hackathon ? `<span style="font-size: 14px; color: #f03939; font-weight: bold;">${project.Hackathon} - Hackathon</span>` : ""}
                     <div class="date text-purple-600 text-sm mb-2">${project.startDate} - ${project.endDate}</div>
                     <h3 class="text-lg font-semibold mb-2 text-white">${project.title}</h3>
                     <p class="text-white text-sm mb-2">${project.description}</p>
-                    <a href="${project.link}" target="_blank" class="text-purple-600 text-sm hover:underline">Link source</a>
+                    ${project?.link ? `<a href="${project.link}" target="_blank" class="text-purple-600 text-sm hover:underline">Link source</a>` : ""}
                 `;
                 rightDiv.appendChild(projectCard);
             });

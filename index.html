@@ -187,6 +187,120 @@
       </div>
     </div>
   </section>
+
+      <!-- NEW: Sự nghiệp / Career (rendered from careerData) -->
+      <section id="career" class="career px-8 sm:px-16 w-screen bg-[#021029] scroll-mt-20 py-12">
+        <div class="mx-auto max-w-5xl">
+          <h2 class="text-3xl font-extrabold text-center text-white mb-6">
+            Sự nghiệp <span class="text-purple-600 text-3xl">Career</span>
+          </h2>
+    
+          <!-- timeline will be rendered here -->
+          <div id="career-timeline" class="timeline space-y-8"></div>
+        </div>
+      </section>
+    
+      <script>
+        // career data array
+        const careerData = [
+          {
+            company: "DG External",
+            companyShort: "A fast-growing product company specializing in dropshipping solutions.",
+            roleTitle: "Intern — Full stack Developer",
+            start: "2025-09-03",
+            end: "present", // use 'present' for ongoing roles
+            description: "Tham gia phát triển các sản phẩm cho công ty.",
+            tech: ["Ruby", "Shopify", "Postgres"],
+            images: [
+              "https://d32myzxfxyl12w.cloudfront.net/images/blog_images/3f9a4a47edcd41fc111e5c994bc21ce0991b52f0.webp?1702029971",
+              "https://magenest.com/wp-content/uploads/2023/12/review-tong-quan-ve-shopify.webp",
+              "https://cdn-cjmik.nitrocdn.com/UjszoEMIGzQLBmRYICliaPmdTnvQlovN/assets/images/optimized/rev-8428f05/www.aalpha.net/wp-content/uploads/2019/05/postgre-database-development-india.png"
+            ]
+          },
+        ];
+    
+        // helper: difference in months
+        function monthsDiff(d1, d2) {
+          return (d2.getFullYear() - d1.getFullYear()) * 12 + (d2.getMonth() - d1.getMonth());
+        }
+    
+        // format period text like "Sep 2025 — Present"
+        function formatPeriod(startStr, endStr) {
+          const start = new Date(startStr);
+          const end = endStr === "present" ? new Date() : new Date(endStr);
+          const opts = { year: "numeric", month: "short" };
+          const startTxt = start.toLocaleDateString(undefined, opts);
+          const endTxt = endStr === "present" ? "Present" : new Date(endStr).toLocaleDateString(undefined, opts);
+          return { text: `${startTxt} — ${endTxt}`, startDate: start, endDate: end };
+        }
+    
+        // compute human readable duration
+        function humanDuration(startDate, endDate) {
+          const m = monthsDiff(startDate, endDate);
+          const years = Math.floor(m / 12);
+          const months = Math.abs(m % 12);
+          let parts = [];
+          if (years > 0) parts.push(`${years} ${years === 1 ? "year" : "years"}`);
+          if (months > 0) parts.push(`${months} ${months === 1 ? "month" : "months"}`);
+          return parts.length ? parts.join(" ") : "Less than a month";
+        }
+    
+        // render career timeline
+        (function renderCareer() {
+          const container = document.getElementById("career-timeline");
+          container.innerHTML = "";
+    
+          careerData.forEach((entry, idx) => {
+            const period = formatPeriod(entry.start, entry.end);
+            const duration = humanDuration(period.startDate, period.endDate);
+    
+            const dotColor = (entry.end === "present" || entry.end === "Present") ? "bg-purple-500" : "bg-gray-600";
+    
+            // build images html
+            const imagesHtml = (entry.images || []).map(src => {
+              return `<img loading="lazy" src="${src}" alt="${entry.company} image" class="w-20 h-12 object-cover rounded-md mr-2 mb-2 border border-gray-700">`;
+            }).join("");
+    
+            const techHtml = (entry.tech || []).map(t => `<span class="text-xs px-2 py-1 mr-2 mb-2 bg-gray-800 text-gray-200 rounded">${t}</span>`).join("");
+    
+            const block = document.createElement("div");
+            block.className = "flex items-start gap-6";
+            block.innerHTML = `
+              <div class="flex flex-col items-center">
+                <div class="w-4 h-4 rounded-full ${dotColor} mt-2"></div>
+                <div class="w-px bg-gray-700 flex-1 mx-auto" style="width:2px"></div>
+              </div>
+    
+              <div class="flex-1 bg-[#072037] border border-gray-800 rounded-xl p-5">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="text-lg font-semibold text-white">${entry.roleTitle} — <span class="text-purple-400">${entry.company}</span></h3>
+                    <p class="text-sm text-gray-400 mt-1">
+                      <span class="period">${period.text}</span>
+                      <span class="text-gray-500"> · </span>
+                      <span class="duration text-gray-400">${duration}</span>
+                    </p>
+                    <p class="text-xs text-gray-500 mt-1 italic">${entry.companyShort}</p>
+                  </div>
+                </div>
+    
+                <p class="text-gray-300 mt-3">${entry.description}</p>
+    
+                <div class="mt-3 flex flex-wrap">
+                  ${techHtml}
+                </div>
+    
+                <div class="mt-3 flex flex-wrap">
+                  ${imagesHtml || '<span class="text-gray-500">No images</span>'}
+                </div>
+              </div>
+            `;
+            container.appendChild(block);
+          });
+        })();
+      </script>
+    
+
   <section id="my_projects" class="my_project px-8 sm:px-16 w-screen h-screen scroll-mt-[30px] sm:h-[calc(100vh-64px)]"
     >
     <div class="mx-auto">
@@ -253,6 +367,7 @@
       <span id="location" class="text-xs text-gray-600 dark:text-gray-300">✌️SaiGon, Việt Nam</span>
     </footer>
   </section>
+
 
   <button id="scrollToTopBtn"
     class="fixed bottom-8 right-8 bg-purple-500 text-white p-4 rounded-full shadow-lg hover:bg-purple-600 transition duration-300 opacity-0">
